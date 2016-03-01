@@ -6,7 +6,6 @@
 
 <!--**********************************ActivityControl********************************************-->
     <string name="lbl_act_msg">Prueba de encendido y apagdo del led</string>
-    <string name="btn_led_on">ON</string>
-    <string name="btn_led_off">OFF</string>
+
 
 </resources>
