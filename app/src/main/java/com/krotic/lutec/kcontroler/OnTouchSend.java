@@ -15,22 +15,24 @@ public class OnTouchSend implements View.OnTouchListener {
             switch (v.getId()){
                 case R.id.btn_forward:
                     changeImage(v,R.drawable.forward_pressed);
+                    //new SendInstruction().execute(SendInstruction.FORWARD);
                     break;
                 case R.id.btn_backward:
                     changeImage(v,R.drawable.backward_pressed);
+                    //new SendInstruction().execute(SendInstruction.BACKWARD);
                     break;
                 case R.id.btn_left:
                     changeImage(v,R.drawable.counterclockwise_pressed);
+                    //new SendInstruction().execute(SendInstruction.LEFT);
                     break;
                 case R.id.btn_right:
                     changeImage(v,R.drawable.clockwise_pressed);
-                    break;
-                case R.id.btn_stop:
-                    changeImage(v,R.drawable.stop_pressed);
+                    //new SendInstruction().execute(SendInstruction.RIGHT);
                     break;
             }
         }
         else if(event.getAction() == MotionEvent.ACTION_UP){
+            //new SendInstruction().execute(SendInstruction.STOP);
             switch (v.getId()){
                 case R.id.btn_forward:
                     changeImage(v,R.drawable.forward);
@@ -43,9 +45,6 @@ public class OnTouchSend implements View.OnTouchListener {
                     break;
                 case R.id.btn_right:
                     changeImage(v,R.drawable.clockwise);
-                    break;
-                case R.id.btn_stop:
-                    changeImage(v,R.drawable.stop);
                     break;
             }
         }

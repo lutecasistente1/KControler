@@ -37,13 +37,13 @@
         android:background="@color/white"/>
 
     <ImageButton
-        android:id="@+id/btn_stop"
+        android:id="@+id/btn_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btn_forward"
-        android:src="@drawable/stop"
+        android:src="@drawable/light"
         android:background="@color/white"/>
 
     <ImageButton
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/btn_stop"
+        android:layout_below="@id/btn_light"
         android:src="@drawable/backward"
         android:background="@color/white"/>
 
