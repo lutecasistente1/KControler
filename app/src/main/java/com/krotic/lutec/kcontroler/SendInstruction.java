@@ -20,14 +20,15 @@ public class SendInstruction extends AsyncTask<String, Void, Void> {
     private static String WifiRed = "sparkfun";
     private static int delay = 10;
 
-    public static final String LED_ON = "http://192.168.4.1/led/1";
-    public static final String LED_OFF = "http://192.168.4.1/led/0";
+    private static final String HOST = "http://192.168.4.1/";
 
-    public static final String FORWARD = "http://192.168.4.1/ad";
-    public static final String BACKWARD = "http://192.168.4.1/at";
-    public static final String RIGHT = "http://192.168.4.1/der";
-    public static final String LEFT = "http://192.168.4.1/izq";
-    public static final String STOP = "http://192.168.4.1/halt";
+    public static final String LED = HOST + "led";
+
+    public static final String FORWARD = HOST + "ad";
+    public static final String BACKWARD = HOST + "at";
+    public static final String RIGHT = HOST + "der";
+    public static final String LEFT = HOST + "izq";
+    public static final String STOP = HOST + "halt";
 
     private static boolean doAction = true;
 
@@ -45,7 +46,7 @@ public class SendInstruction extends AsyncTask<String, Void, Void> {
 
         String command = params[0];
 
-        if((command.compareTo(LED_ON) == 0) || (command.compareTo(LED_OFF) == 0)){
+        if((command.compareTo(LED) == 0)) {
             light(command);
         }
         else if(command.compareTo(STOP) == 0){

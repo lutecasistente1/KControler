@@ -43,9 +43,11 @@ public class ActivityControl extends AppCompatActivity {
                 if(isLight){
                     light.setImageResource(R.drawable.light);
                     isLight = !isLight;
+                    new SendInstruction().execute(SendInstruction.LED);
                 }else{
                     light.setImageResource(R.drawable.light_pressed);
                     isLight = !isLight;
+                    new SendInstruction().execute(SendInstruction.LED);
                 }
             }
         });
