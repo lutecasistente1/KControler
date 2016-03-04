@@ -67,10 +67,12 @@
         android:background="@color/white"/>
 
     <ImageView
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:src="@drawable/krotic_logo"
-        android:layout_alignParentBottom="true"/>
+        android:layout_below="@id/btn_backward"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>
