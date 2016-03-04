@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KControler</string>
+    <string name="app_name">KController</string>
 
 <!--**********************************ActivityStarter********************************************-->
     <string name="btn_starter_act">Continuar</string>
@@ -7,5 +7,12 @@
 <!--**********************************ActivityControl********************************************-->
     <string name="lbl_act_msg">Prueba de encendido y apagdo del led</string>
 
+<!--***********************************DialogCalibrate*******************************************-->
+
+    <string-array name="calibrate_array">
+        <item>tiempo real</item>
+        <item>tiempo de respuesta mediano</item>
+        <item>tiempo de respuesta largo</item>
+    </string-array>
 
 </resources>

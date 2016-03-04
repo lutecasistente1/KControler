@@ -1,21 +1,20 @@
 package com.krotic.lutec.kcontroler;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class ActivityControl extends AppCompatActivity {
-
-    private ActivityControl activity = this;
-    private NetworkInfo networkInfo;
     
     private boolean isLight = false;
 
-    private ImageButton forward, backward, light, left, right;
+    private ImageButton forward, backward, light, left, right, settings;
+
+    private ActivityControl instance = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +51,39 @@ public class ActivityControl extends AppCompatActivity {
             }
         });
 
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        networkInfo = connMgr.getActiveNetworkInfo();
+        settings = (ImageButton) findViewById(R.id.btn_settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(instance);
+
+                builder.setTitle("Definir tiempo de respuesta");
+
+                builder.setItems(R.array.calibrate_array, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case 1:
+                                SendInstruction.realTime();
+                                Log.v("DialogPicker", "indice: " + Integer.toString(which));
+                                break;
+                            case 2:
+                                SendInstruction.mediumDelay();
+                                Log.v("DialogPicker", "indice: " + Integer.toString(which));
+                                break;
+                            case 3:
+                                SendInstruction.maxDelay();
+                                Log.v("DialogPicker", "indice: " + Integer.toString(which));
+                                break;
+                            default:
+                                Log.v("DialogPicker", "indice: "+ Integer.toString(which));
+                        }
+                    }
+                });
+
+                builder.create().show();
+            }
+        });
 
     }
 

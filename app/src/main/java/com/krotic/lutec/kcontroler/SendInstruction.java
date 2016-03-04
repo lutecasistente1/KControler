@@ -17,8 +17,7 @@ import java.net.URL;
  */
 public class SendInstruction extends AsyncTask<String, Void, Void> {
 
-    private static String WifiRed = "sparkfun";
-    private static int delay = 10;
+    private static int delay = 1;
 
     private static final String HOST = "http://192.168.4.1/";
 
@@ -32,13 +31,16 @@ public class SendInstruction extends AsyncTask<String, Void, Void> {
 
     private static boolean doAction = true;
 
-
-    public static String getWifiRed(){
-        return WifiRed;
+    public static void realTime(){
+        delay = 1;
     }
 
-    public static void setWifiRed(String wifiRed){
-        WifiRed = wifiRed;
+    public static void mediumDelay(){
+        delay = 500;
+    }
+
+    public static void maxDelay(){
+        delay = 1000;
     }
 
     @Override
